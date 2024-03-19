@@ -41,7 +41,7 @@ userApp.post("/signup", async (c) => {
     return c.json({ token: `Bearer ${token}` });
   } catch (error) {
     c.status(404);
-    return c.json({ message: "Invalid Credentials" });
+    return c.json({ message: "Invalid Credential" });
   }
 });
 userApp.post("/signin", async (c) => {

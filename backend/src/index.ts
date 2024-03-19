@@ -1,10 +1,11 @@
 import { Hono } from "hono";
 import { userApp } from "./routers/user";
 import { postApp } from "./routers/post";
-import { cors } from "hono/cors";
+import {cors } from "hono/cors"
+
 
 const app = new Hono<{
-  Bindings: {
+  Bindings: {DATABASE_URL
     DATABASE_URL: string;
     JWT_SECRET: string;
   };
@@ -17,5 +18,7 @@ app.use("/api/*", cors());
 
 app.route("/api/v1/user", userApp);
 app.route("/api/v1/post", postApp);
+//console.log("hello")
+
 
 export default app;
