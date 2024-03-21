@@ -4,6 +4,7 @@ import { sign, verify } from "hono/jwt";
 import { Hono } from "hono";
 import { signinInput, signupInput } from "@shahzaib_01/medium_common";
 
+//test commit
 type Bindings = {
   DATABASE_URL: string;
   JWT_SECRET: string;
@@ -20,6 +21,7 @@ export const userApp = new Hono<{
 
 userApp.post("/signup", async (c) => {
   const body = await c.req.json();
+  //demo
   const { success } = signupInput.safeParse(body);
   if (!success) {
     c.status(400);
